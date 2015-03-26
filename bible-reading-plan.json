@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "A Bible Reading Plan Schema",
+  "description": "A standard schema for sharing bible reading plans",
+  "definitions": {
+    "bibleLocation": {
+      "type": "object",
+      "properties": {
+        "book": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chapter": {
+          "type": "number",
+          "minimum": 1
+        },
+        "verse": {
+          "type": "number",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "book"
+      ],
+      "dependencies": {
+        "chapter": [
+          "book"
+        ],
+        "verse": [
+          "book",
+          "chapter"
+        ]
+      }
+    },
+    "biblePassage": {
+      "type": "object",
+      "properties": {
+        "begin": {
+          "$ref": "#/definitions/bibleLocation"
+        },
+        "end": {
+          "$ref": "#/definitions/bibleLocation"
+        }
+      },
+      "required": [
+        "begin"
+      ]
+    },
+    "bibleReadingTime": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "default": "anytime",
+          "enum": [
+            "morning",
+            "evening",
+            "anytime"
+          ]
+        },
+        "passages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/biblePassage"
+          }
+        }
+      }
+    },
+    "bibleReadingDay": {
+      "type": "object",
+      "properties": {
+        "num": {
+          "type": "number",
+          "minimum": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "day": {
+          "type": "string"
+        },
+        "readingTimes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bibleReadingTime"
+          }
+        }
+      }
+    },
+    "bibleReadingTrack": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "readingDays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bibleReadingDay"
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "abstract": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 6000
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "timespan": {
+      "description": "The number of days that the plan spans",
+      "type": "number",
+      "minimum": 1
+    },
+    "image": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "editor": {
+      "description": "The person or organization who prepares this digital plan on behalf of the author",
+      "type": "string"
+    },
+    "readingTracks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/bibleReadingTrack"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "abstract",
+    "timespan",
+    "website",
+    "author",
+    "editor",
+    "readingTracks"
+  ]
+}

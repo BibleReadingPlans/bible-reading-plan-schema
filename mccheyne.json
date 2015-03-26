@@ -1,0 +1,108 @@
+{
+  "title": "Robert Murray M\\'Cheyne\\'s Bible Reading Calendar",
+  "abstract": "R.M.M\\'Cheyne (1813-1843) was the minister of St Peter\\'s Church, Dundee, Scotland. He created a year long bible reading plan suitable for families to go through together.",
+  "description": "",
+  "timespan": 365,
+  "website": "https://cchmb.org/content/plugins/mcheyne-reading-plan/calendar.pdf",
+  "author": "Robert Murray M\\'Cheyne",
+  "editor": "David F. Haslam",
+  "readingTracks": [
+    {
+      "name": "Family",
+      "readingDays": [
+        {
+          "num": 1,
+          "readingTimes": [
+            {
+              "name": "anytime",
+              "passages": [
+                {
+                  "begin": {
+                    "book": "Genesis",
+                    "chapter": 1
+                  }
+                },
+                {
+                  "begin": {
+                    "book": "Matthew",
+                    "chapter": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "num": 2,
+          "readingTimes": [
+            {
+              "name": "anytime",
+              "passages": [
+                {
+                  "begin": {
+                    "book": "Genesis",
+                    "chapter": 2
+                  }
+                },
+                {
+                  "begin": {
+                    "book": "Matthew",
+                    "chapter": 2
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Secret",
+      "readingDays": [
+        {
+          "num": 1,
+          "readingTimes": [
+            {
+              "name": "anytime",
+              "passages": [
+                {
+                  "begin": {
+                    "book": "Ezra",
+                    "chapter": 1
+                  }
+                },
+                {
+                  "begin": {
+                    "book": "Acts",
+                    "chapter": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "num": 2,
+          "readingTimes": [
+            {
+              "name": "anytime",
+              "passages": [
+                {
+                  "begin": {
+                    "book": "Ezra",
+                    "chapter": 2
+                  }
+                },
+                {
+                  "begin": {
+                    "book": "Acts",
+                    "chapter": 2
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
